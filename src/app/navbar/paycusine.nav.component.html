@@ -1,0 +1,17 @@
+
+
+<nav class="navbar  navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Pay Cuisine</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="justify-content-end collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a *ngIf="loginStatus"   class="nav-item nav-link"  >Welcome {{paycuiseUser.name}} </a>
+        <a style="cursor:pointer" *ngIf="!loginStatus"  class="nav-item nav-link" (click)="loginWithFacebook()">Login</a>
+        <a *ngIf="loginStatus" class="nav-item nav-link" [attr.href]="'/managestore/'">Manage Store</a>
+        <a style="cursor:pointer" *ngIf="loginStatus"   class="nav-item nav-link" (click)="logoutWithFacebook()" >Logout</a>
+   
+      </div>
+    </div>
+  </nav>

@@ -1,0 +1,43 @@
+<br>
+<div class="container">
+
+    <div *ngIf="!iscreatestore" class="row">
+            <div class="col-md-12" style="margin-bottom: 10px;">
+                   <button  type="button" class="btn btn-success float-right" (click)="onClickNewStore()">New Store
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                   </button>
+            </div>
+      
+        <div class="col-md-12">  <ownstorelist>Loading..</ownstorelist></div>
+       
+    </div>
+   
+    
+    <div *ngIf="iscreatestore" class="row">
+         
+
+       
+        <form (ngSubmit)="createNewStore()" #newstoreForm="ngForm" style="width: 100%;">
+                    <div class="form-group">
+                      <label for="name">Store Name</label>
+                      <input type="text" class="form-control" id="name" [(ngModel)]="newstore.name" [ngModelOptions]="{standalone: true}" required>
+                    </div>
+               
+                    <div class="form-group">
+                      <label for="picurl">Image Url</label>
+                      <input type="text" class="form-control" id="picurl" [(ngModel)]="newstore.picurl" [ngModelOptions]="{standalone: true}"  required>
+                    </div>
+ 
+                    <div class="form-group">
+                            <label for="detail">Detail</label>
+                            <input type="text" class="form-control" [(ngModel)]="newstore.detail" [ngModelOptions]="{standalone: true}" id="detail">
+                    </div>
+
+                    <button  type="button" class="btn btn-danger " (click)="onClickback()">Back </button>
+                    <button type="submit" class="btn btn-success" >Submit</button>
+               
+        </form>
+
+    </div>
+
+</div>  
