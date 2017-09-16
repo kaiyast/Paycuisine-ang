@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "pay-cuisine",
+    "webfood": "pay-cuisine"
+  }
+}
